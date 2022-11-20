@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const app = express();
+require('dotenv').config()
 
 //middleware una función que se ejecuta antes de hacer otra cosa
 //Servir contenido estatico
@@ -40,4 +41,7 @@ app.get('*', (req, res) =>{
 });
 
 
-app.listen(8080);
+app.listen(process.env.PORT, ()=>{
+    console.log('Corriendo en ', process.env.PORT);
+
+});
